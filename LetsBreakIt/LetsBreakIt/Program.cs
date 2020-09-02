@@ -234,7 +234,7 @@ namespace LetsBreakIt
             Console.WriteLine();
             Console.Write("Enter as phrase: ");
             input = Console.ReadLine();
-            joke = input + " in bed!";
+            joke = input.Trim() + " in bed!";
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine();
             Console.WriteLine(joke);
@@ -284,8 +284,8 @@ namespace LetsBreakIt
             Console.Write("Please enter an adjective: ");
             Console.WriteLine();
 
-            story = "He " + verb1 + " his " + bodypart1 + " on my " + bodypart2 + ". Then I " + verb2 + " my " + bodypart3 + " all over your " + bodypart4 + ", fuck yea it feels "
-                + adjective1 + ". ";
+            story = "He " + verb1.Trim() + " his " + bodypart1.Trim() + " on my " + bodypart2.Trim() + ". Then I " + verb2.Trim() + " my " + bodypart3.Trim() + " all over your " + bodypart4.Trim() + ", fuck yea it feels "
+                + adjective1.Trim() + ". ";
 
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine();
