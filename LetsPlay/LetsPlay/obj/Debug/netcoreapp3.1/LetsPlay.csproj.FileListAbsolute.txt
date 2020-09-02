@@ -1,0 +1,13 @@
+C:\Users\Varquin\source\repos\LetsPlay\LetsPlay\obj\Debug\netcoreapp3.1\LetsPlay.csprojAssemblyReference.cache
+C:\Users\Varquin\source\repos\LetsPlay\LetsPlay\obj\Debug\netcoreapp3.1\LetsPlay.AssemblyInfoInputs.cache
+C:\Users\Varquin\source\repos\LetsPlay\LetsPlay\obj\Debug\netcoreapp3.1\LetsPlay.AssemblyInfo.cs
+C:\Users\Varquin\source\repos\LetsPlay\LetsPlay\obj\Debug\netcoreapp3.1\LetsPlay.csproj.CoreCompileInputs.cache
+C:\Users\Varquin\source\repos\LetsPlay\LetsPlay\bin\Debug\netcoreapp3.1\LetsPlay.exe
+C:\Users\Varquin\source\repos\LetsPlay\LetsPlay\bin\Debug\netcoreapp3.1\LetsPlay.deps.json
+C:\Users\Varquin\source\repos\LetsPlay\LetsPlay\bin\Debug\netcoreapp3.1\LetsPlay.runtimeconfig.json
+C:\Users\Varquin\source\repos\LetsPlay\LetsPlay\bin\Debug\netcoreapp3.1\LetsPlay.runtimeconfig.dev.json
+C:\Users\Varquin\source\repos\LetsPlay\LetsPlay\bin\Debug\netcoreapp3.1\LetsPlay.dll
+C:\Users\Varquin\source\repos\LetsPlay\LetsPlay\bin\Debug\netcoreapp3.1\LetsPlay.pdb
+C:\Users\Varquin\source\repos\LetsPlay\LetsPlay\obj\Debug\netcoreapp3.1\LetsPlay.dll
+C:\Users\Varquin\source\repos\LetsPlay\LetsPlay\obj\Debug\netcoreapp3.1\LetsPlay.pdb
+C:\Users\Varquin\source\repos\LetsPlay\LetsPlay\obj\Debug\netcoreapp3.1\LetsPlay.genruntimeconfig.cache
