@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+
 namespace LetsPlay
 {
     class Program
@@ -9,7 +10,7 @@ namespace LetsPlay
             do
             {
                 MainMenu();
-            } 
+            }
             while (ContinueApp());
         }
         static void MainMenu()
@@ -55,6 +56,9 @@ namespace LetsPlay
                 case 7:
                     Madlib();
                     break;
+                case 1337:
+                    Secrets();
+                    break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Please choose from the list");
@@ -98,7 +102,7 @@ namespace LetsPlay
             Console.WriteLine();
             Console.Write("Enter as phrase: ");
             input = Console.ReadLine();
-            joke = input.Trim() + " in bed!";
+            joke = Clean(input).Trim() + " in bed!";
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine();
             Console.WriteLine(joke);
@@ -133,8 +137,8 @@ namespace LetsPlay
             Console.Write("Please enter an adjective: ");
             Console.WriteLine();
 
-            story = "He " + verb1.Trim() + " his " + bodypart1.Trim() + " on my " + bodypart2.Trim() + ". Then I " + verb2.Trim() + " my " + bodypart3.Trim() + " all over your " + bodypart4.Trim() + ", fuck yea it feels "
-                + adjective1.Trim() + ". ";
+            story = "He " + Clean(verb1).Trim() + " his " + Clean(bodypart1).Trim() + " on my " + Clean(bodypart2).Trim() + ". Then I " + Clean(verb2).Trim() + " my " + Clean(bodypart3).Trim() + " all over your " + Clean(bodypart4).Trim() + ", fuck yea it feels "
+                + Clean(adjective1).Trim() + ". ";
 
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine();
@@ -303,5 +307,70 @@ namespace LetsPlay
             }
             return playApp;
         }
+        //static void Calculator()
+        //{
+
+        //    Console.Write("Enter a number: ");
+        //    double num1 = Convert.ToDouble(Console.ReadLine());
+
+        //    Console.Write("Enter Operator: ");
+        //    string op = Console.ReadLine();
+
+        //    Console.Write("Enter a number: ");
+        //    double num2 = Convert.ToDouble(Console.ReadLine());
+
+        //    if (op == "+")
+        //    {
+        //        Console.ForegroundColor = ConsoleColor.DarkYellow;
+        //        Console.WriteLine(num1 + num2);
+        //        Console.ResetColor();
+        //    }
+        //    else if (op == "-")
+        //    {
+        //        Console.ForegroundColor = ConsoleColor.DarkYellow;
+        //        Console.WriteLine(num1 - num2);
+        //        Console.ResetColor();
+        //    }
+        //    else if (op == "*")
+        //    {
+        //        Console.ForegroundColor = ConsoleColor.DarkYellow;
+        //        Console.WriteLine(num1 * num2);
+        //        Console.ResetColor();
+        //    }
+        //    else if (op == "/")
+        //    {
+        //        Console.ForegroundColor = ConsoleColor.DarkYellow;
+        //        Console.WriteLine(num1 / num2);
+        //        Console.ResetColor();
+        //    }
+        //    else
+        //    {
+        //        Console.ForegroundColor = ConsoleColor.Red;
+        //        Console.WriteLine("Invalid Operator");
+        //        Console.ResetColor();
+        //        Calculator();
+        //    }
+        static void Secrets()
+        {
+            for (int i = 1; i < 100000; i++)
+            {
+                Console.ForegroundColor = GetRandomConsoleColor();
+                Console.WriteLine("Zach Sux Nvr 4git. Zach Sux Nvr 4git. Zach Sux Nvr 4git. Zach Sux Nvr 4git. Zach Sux Nvr 4git. Zach Sux Nvr 4git.");
+                Console.ResetColor();
+            }
+        }
+        static Random _random = new Random();
+        static ConsoleColor GetRandomConsoleColor()
+        {
+            var consoleColors = Enum.GetValues(typeof(ConsoleColor));
+            return (ConsoleColor)consoleColors.GetValue(_random.Next(consoleColors.Length));
+        }
+        static string Clean(string dirt)
+        {
+            char[] CharClean = { '.', ',', '?', '!', '@', '!','#','$','%','^','&','*' };
+            string clean = dirt.Trim(CharClean);
+            return clean;
+        }
     }
 }
+
