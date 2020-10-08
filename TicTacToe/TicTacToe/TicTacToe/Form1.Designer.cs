@@ -32,6 +32,10 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.player1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.player2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetNamesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,12 +54,9 @@
             this.x_win_count = new System.Windows.Forms.Label();
             this.draw_count = new System.Windows.Forms.Label();
             this.o_win_count = new System.Windows.Forms.Label();
-            this.setPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.player1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.player2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Player1Label = new System.Windows.Forms.Label();
             this.Player2Label = new System.Windows.Forms.Label();
-            this.resetNamesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Scores = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,21 +86,52 @@
             // newGameToolStripMenuItem
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.newGameToolStripMenuItem.Text = "New Game";
             this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
             // 
             // resetScoreToolStripMenuItem
             // 
             this.resetScoreToolStripMenuItem.Name = "resetScoreToolStripMenuItem";
-            this.resetScoreToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.resetScoreToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.resetScoreToolStripMenuItem.Text = "Reset Score";
             this.resetScoreToolStripMenuItem.Click += new System.EventHandler(this.resetScoreToolStripMenuItem_Click);
+            // 
+            // setPlayerToolStripMenuItem
+            // 
+            this.setPlayerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.player1ToolStripMenuItem,
+            this.player2ToolStripMenuItem,
+            this.resetNamesToolStripMenuItem});
+            this.setPlayerToolStripMenuItem.Name = "setPlayerToolStripMenuItem";
+            this.setPlayerToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.setPlayerToolStripMenuItem.Text = "Set Player";
+            // 
+            // player1ToolStripMenuItem
+            // 
+            this.player1ToolStripMenuItem.Name = "player1ToolStripMenuItem";
+            this.player1ToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.player1ToolStripMenuItem.Text = "Player 1";
+            this.player1ToolStripMenuItem.Click += new System.EventHandler(this.player1ToolStripMenuItem_Click);
+            // 
+            // player2ToolStripMenuItem
+            // 
+            this.player2ToolStripMenuItem.Name = "player2ToolStripMenuItem";
+            this.player2ToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.player2ToolStripMenuItem.Text = "Player 2";
+            this.player2ToolStripMenuItem.Click += new System.EventHandler(this.player2ToolStripMenuItem_Click);
+            // 
+            // resetNamesToolStripMenuItem
+            // 
+            this.resetNamesToolStripMenuItem.Name = "resetNamesToolStripMenuItem";
+            this.resetNamesToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.resetNamesToolStripMenuItem.Text = "Reset Names";
+            this.resetNamesToolStripMenuItem.Click += new System.EventHandler(this.resetNamesToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -289,30 +321,6 @@
             this.o_win_count.TabIndex = 16;
             this.o_win_count.Text = "0";
             // 
-            // setPlayerToolStripMenuItem
-            // 
-            this.setPlayerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.player1ToolStripMenuItem,
-            this.player2ToolStripMenuItem,
-            this.resetNamesToolStripMenuItem});
-            this.setPlayerToolStripMenuItem.Name = "setPlayerToolStripMenuItem";
-            this.setPlayerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.setPlayerToolStripMenuItem.Text = "Set Player";
-            // 
-            // player1ToolStripMenuItem
-            // 
-            this.player1ToolStripMenuItem.Name = "player1ToolStripMenuItem";
-            this.player1ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.player1ToolStripMenuItem.Text = "Player 1";
-            this.player1ToolStripMenuItem.Click += new System.EventHandler(this.player1ToolStripMenuItem_Click);
-            // 
-            // player2ToolStripMenuItem
-            // 
-            this.player2ToolStripMenuItem.Name = "player2ToolStripMenuItem";
-            this.player2ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.player2ToolStripMenuItem.Text = "Player 2";
-            this.player2ToolStripMenuItem.Click += new System.EventHandler(this.player2ToolStripMenuItem_Click);
-            // 
             // Player1Label
             // 
             this.Player1Label.AutoSize = true;
@@ -331,18 +339,22 @@
             this.Player2Label.TabIndex = 18;
             this.Player2Label.Text = "Player 2";
             // 
-            // resetNamesToolStripMenuItem
+            // Scores
             // 
-            this.resetNamesToolStripMenuItem.Name = "resetNamesToolStripMenuItem";
-            this.resetNamesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.resetNamesToolStripMenuItem.Text = "Reset Names";
-            this.resetNamesToolStripMenuItem.Click += new System.EventHandler(this.resetNamesToolStripMenuItem_Click);
+            this.Scores.Location = new System.Drawing.Point(121, 382);
+            this.Scores.Name = "Scores";
+            this.Scores.Size = new System.Drawing.Size(108, 39);
+            this.Scores.TabIndex = 19;
+            this.Scores.Text = "Show Scores";
+            this.Scores.UseVisualStyleBackColor = true;
+            this.Scores.Click += new System.EventHandler(this.show_obj_score);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(365, 514);
+            this.Controls.Add(this.Scores);
             this.Controls.Add(this.Player2Label);
             this.Controls.Add(this.Player1Label);
             this.Controls.Add(this.o_win_count);
@@ -405,6 +417,7 @@
         private System.Windows.Forms.Label Player1Label;
         private System.Windows.Forms.Label Player2Label;
         private System.Windows.Forms.ToolStripMenuItem resetNamesToolStripMenuItem;
+        private System.Windows.Forms.Button Scores;
     }
 }
 

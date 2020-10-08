@@ -8,6 +8,8 @@ namespace TicTacToe
     {
         bool turn = true; //true = X turn ; false = O turn
         int turn_count = 0;
+        Players p1 = new Players("Player 1", 0);
+        Players p2 = new Players("Player 2", 0);
         public Form1()
         {
             InitializeComponent();
@@ -74,12 +76,14 @@ namespace TicTacToe
                 {
                     winner = Player2Label.Text;
                     o_win_count.Text = (Int32.Parse(o_win_count.Text) + 1).ToString();
+                    p2.Score++;
                     NewGame();
                 }
                 else
                 {
                     winner = Player1Label.Text;
                     x_win_count.Text = (Int32.Parse(x_win_count.Text) + 1).ToString();
+                    p1.Score++;
                     NewGame();
                 }
                 MessageBox.Show(winner + " Wins!", "Yay!");
@@ -112,9 +116,9 @@ namespace TicTacToe
             turn = true;
             turn_count = 0;
 
-       
-                foreach (Control c in Controls)
-                {
+
+            foreach (Control c in Controls)
+            {
                 try
                 {
                     Button b = (Button)c;
@@ -122,8 +126,9 @@ namespace TicTacToe
                     b.Text = "";
                 }
                 catch { }
-                }
-            
+            }
+            Scores.Text = "Show Scores";
+
         }
 
         private void button_enter(object sender, EventArgs e)
@@ -151,6 +156,8 @@ namespace TicTacToe
             o_win_count.Text = "0";
             x_win_count.Text = "0";
             draw_count.Text = "0";
+            p1.Score = 0;
+            p2.Score = 0;
 
         }
         private void NewGame()
@@ -169,11 +176,13 @@ namespace TicTacToe
                 }
                 catch { }
             }
+            Scores.Text = "Show Scores";
         }
 
         private void player1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string promptValue = Prompt.ShowDialog("Enter Name:", "Player 1");
+            p1.Name = promptValue;
             Player1Label.Text = promptValue;
 
         }
@@ -205,13 +214,24 @@ namespace TicTacToe
         private void player2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string promptValue = Prompt.ShowDialog("Enter Name:", "Player 2");
+            p2.Name = promptValue;
             Player2Label.Text = promptValue;
         }
 
         private void resetNamesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Player1Label.Text = "Player 1";
+            p1.Name = "Player 1";
             Player2Label.Text = "Player 2";
+            p2.Name = "Player 2";
+        }
+
+        private void show_obj_score(object sender, EventArgs e)
+        {
+            string message = p1.Name + "'s score is " + p1.Score + " and " + p2.Name + "'s score is " + p2.Score + "!";
+            string title = "Scores BB!";
+            MessageBox.Show(message, title);
         }
     }
+    
 }
